@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/Cuenta.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <title>Tu Cuenta</title>
+</head>
+<body>
+    <header id="main-header">
+		<div class="containerhead logo-nav-container">
+		<a id="logo-header" href="index.html"><img src="Imagenes/logo.png" alt="logo" width="200px" ></a>
+
+		<nav class="navigation">
+			<ul>
+				<li><a href="index.html">Inicio</a></li>
+				<li><a href="Producto.html">Producto</a></li>
+				<li><a href="Nosotros.html">Nosotros</a></li>
+                <li><a href="Contacto.html">Contacto</a></li>
+                <li><a href="Cuenta.html">Cuenta</a></li></ul>
+		</nav>
+    </div>
+	</header>
+
+    <h1>Cuenta</h1>
+<hr>
+
+
+    <div class="contenedor">
+        <p style="background-color: rgb(211, 234, 255);">Desde el panel de control de tu cuenta puedes ver tus pedidos recientes, eliminar tu cuenta, editar tu contraseña y los detalles de tu cuenta.</p>
+        <br>
+    <img src="Imagenes/usuario.png" alt="" class="ImagenUsuario">
+    
+    <h2>Nombre</h2>
+    <h2>correo</h2>
+
+    <form action="">
+        <input type="file" id="my_file" >
+    </form>
+
+
+    <p>Inventario: 2200.</p>
+    <button id="btnChangePassword" >Cambiar contraseña</button>
+    <button id="btnUsuarios">Usuarios</button>
+    <button id="btnDeletAcount"> Eliminar cuenta</button>
+    <button style="margin: auto; margin-top: 60px; background-color: #c4ec7c;" id="btnLogout" >Cerrar sesión</button>
+    </div>
+
+    <div>
+        
+    <div style="width: 50%; float: left;">
+        <img src="Imagenes/logo.png" alt=" style="float: left; margin-right: 32px;>
+    </div>
+
+    <div style="background-color: #ffffff; ">
+        <H3>NAVEGACIÓN</H3>
+        <ul type="A">
+        <li><a href="index.html">INICIO</a></li>
+        <li><a href="Producto.html">PRODUCTO</a></li>
+        <li><a href="Nosotros.html">NOSOTROS</a></li>
+        <li><a href="Contacto.html">CONTACTO</a></li>
+        <li><a href="Login.html">LOGIN</a></li>
+        <li><a href="#">POLÍTICAS Y TERMINOS</a>
+        </ul>
+    </div>
+
+</div>
+
+
+    <footer>
+        <br>
+    <p>Copyright © 2017 Tay For Live - Todos los Derechos Reservados</p>
+
+    </footer>
+
+</body>
+<script type="module">
+	// Import the functions you need from the SDKs you need
+    //inizializar
+	import { initializeApp } from "https://www.gstatic.com/firebasejs/9.4.0/firebase-app.js";
+    //CRUD
+	import { getDatabase, set, ref, update, remove, child, get } from "https://www.gstatic.com/firebasejs/9.4.0/firebase-database.js";
+    //autetntication
+	import { getAuth, signOut, sendPasswordResetEmail, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, deleteUser } from "https://www.gstatic.com/firebasejs/9.4.0/firebase-auth.js";
+	
+	// TODO: Add SDKs for Firebase products that you want to use
+	// https://firebase.google.com/docs/web/setup#available-libraries
+  
+	// Your web app's Firebase configuration
+	const firebaseConfig = {
+	  apiKey: "AIzaSyAXapsdZ_QQ4sLtF48Yv5ovGz87eUwb1RM",
+	  authDomain: "tayforlive.firebaseapp.com",
+	  databaseURL: "https://tayforlive-default-rtdb.firebaseio.com",
+	  projectId: "tayforlive",
+	  storageBucket: "tayforlive.appspot.com",
+	  messagingSenderId: "163156985446",
+	  appId: "1:163156985446:web:3ada60c6727b7c5ca68fa7"
+	};
+  
+	// Initialize Firebase
+	const app = initializeApp(firebaseConfig);
+	const database = getDatabase(app);
+	const auth = getAuth();
+    //var storage = firebase.storage();
+
+//------------------------inicializar Titulos-------------------
+    var Subtitulos = document.querySelectorAll("h2")
+    var Formularios = document.querySelectorAll("form")
+
+//-------------------Variables---------------------
+var email;
+var username;
+var uid;
+//ArrayList<Areas>list;
+
+//--------------------------Inicializo botones---------------------
+var btnChange = document.getElementById("btnChangePassword");
+var btnLogout = document.getElementById("btnLogout");
+var btnDeletAcount = document.getElementById("btnDeletAcount");
+var btnUsuarios = document.getElementById("btnUsuarios");
+
+//-----------------------Asignar eventos con botones--------------
+btnChange.addEventListener('click', ChangePassword);
+btnLogout.addEventListener('click', Logout);
+btnDeletAcount.addEventListener('click', DeletAcount);
+btnUsuarios.addEventListener('click', Usuarios);
+ 
+
+//-----------------------Cambiar contraseña--------------
+function ChangePassword(){
+
+    const dbref = ref(database);
+        get(child(dbref,"users/"+uid)).then((snapshot)=>{
+            if(snapshot.exists()){
+                email = snapshot.val().email;
+                username =  snapshot.val().username;
+                sendPasswordResetEmail(auth, email)
+  .then(() => {
+   alert('Se envio un correo para cabiar tu contraseña');
+  })
+  .catch((error) => {
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    alert(error);
+  });
+            }
+            else{
+                alert('No data found')
+            }
+        })
+        .catch((error)=>{
+            const errorCode = error.code;
+            const errorMessage = error.message;
+	        alert(errorMessage);
+        });
+}
+
+//-------------------------Validar inicio de sesión------------
+const user = auth.currentUser;
+onAuthStateChanged(auth, (user)=> {
+var username = document.getElementById("username");
+var email = document.getElementById("email");
+
+	if(user){
+		uid = user.uid;
+        const dbref = ref(database);
+        get(child(dbref,"users/"+uid)).then((snapshot)=>{
+            if(snapshot.exists()){
+                //username.value = snapshot.val().username;
+                //email.value = snapshot.val().email;
+                var SubtituloNuevo = document.createElement("h2");
+                var Subtitulo2Nuevo = document.createElement("h2");
+                email = snapshot.val().email;
+                username =  snapshot.val().username;
+	            SubtituloNuevo.innerHTML = username;
+	            Subtitulo2Nuevo.innerHTML = email;
+
+	            var zDiv = document.querySelectorAll("div")[1];
+                zDiv.insertBefore(SubtituloNuevo, Formularios[0]);
+	            zDiv.insertBefore(Subtitulo2Nuevo, Fioormulars[0]);
+
+//-----------------------------Sí el usuario es un cliente...------------------------
+                if(snapshot.val().type == 0){
+
+                }else 
+//-----------------------------Sí el usuario es un Adminisitrador...------------------------
+                if(snapshot.val().type == 1){
+
+                }
+            }
+            else{
+                alert('No data found');
+            }
+        })
+        .catch((error)=>{
+            const errorCode = error.code;
+            const errorMessage = error.message;
+	        alert(errorMessage);
+        });
+
+//-----------------------sí el usuario no esta registrado-------------
+	} else {
+        window.location.href = "index.html"
+	}
+});
+
+
+//------------------------Cerrar sesión------------------
+function Logout(){          
+	signOut(auth).then(()=> {
+		alert('Sesión cerrada');
+	}).catch((error)=>{
+	const errorCode = error.code;
+	const errorMessage = error.message;
+
+	alert(errorMessage);
+});
+}
+
+//------------------------Historial-----------------
+function Usuarios(){
+    window.location.href = "Usuarios.html"
+}
+
+//-------------------------Delet Acount-------
+function DeletAcount(){
+    const userr = auth.currentUser;
+    deleteUser(userr).then(() => {
+        alert('Usuario Eliminado')
+}).catch((error) => {
+  
+	alert('ocurrió un error');
+});
+}
+
+//----------------Subir Imagen------------
+function UploadImg(){
+    var file = ($('#my_file'))[0].files[0];
+
+    console.log(file);  
+}
+
+</script>
+</html>
