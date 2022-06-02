@@ -61,21 +61,23 @@ li a.active, li a:hover{
     display: none;
 }
 
+
+
 .Contenido{
 background-color: #1B271D;
 margin-right: 0;
 
 }
 .Contenido p{
+    color: white;
     margin: 50px;
     text-align: justify;
 }
 .Contenido h2{
-    text-align: center;
     color: white;
     margin: 50px;
     margin-bottom: -40px;
-   
+    text-align: justify
 }
 .Contenido::-webkit-scrollbar{
     width: 7px;
@@ -85,27 +87,53 @@ margin-right: 0;
 
 .Footer{
     background-color: #84e85b;
-    grid-column: 1/3;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 h1{
-    text-align: center;
-    color: white;
     margin-top: 20px;
     margin-bottom: -40px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 
-
 p{
-    color: white;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+
+.btn{
+    display: inline-block;
+    border-radius: 3px;
+    padding: 6px 5px;
+text-decoration: none;
+
+text-shadow: 0 1px 0 rgba(255, 255, 255, 0.3);
+box-shadow: 0 1px 0 rgba(0, 0, 0, 0.3);
+
+}
+
+.btn-green{
+    color: white;
+    background-color: #84e85b;
+
+}
+.btn-green:hover{
+    background-color: #68a84d;
+}
+.btn-green:active{
+    background-color: #5ca33e;
+}
+
+li{
+    color: white;
+}
+a{
+    text-decoration: none;
+    color: #8be864;
+}
 
 
 @media (max-width: 952px) {
