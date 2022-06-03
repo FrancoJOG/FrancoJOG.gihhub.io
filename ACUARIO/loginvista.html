@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title></title> 
+	<meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1.0, maximum-scale=3.0, minimum-scale=1.0">
+ <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" >
+	<link rel="stylesheet" href="estilos.css">
+	
+
+</head>  
+<body>
+    <form class="formulario" method="POST">
+    
+    <h1>Login</h1>
+     <div class="contenedor">
+     
+     
+         
+         <div class="input-contenedor">
+         <i class="fas fa-envelope icon"></i>
+         <input id="email" type="text" placeholder="Correo Electrónico" name="correo"required>
+         
+         </div>
+         
+         <div class="input-contenedor">
+        <i class="fas fa-key icon"></i>
+         <input id="password" type="password" placeholder="Contraseña" name="contraseña"required>
+         
+         </div>
+         <input id="login" value="Ingresar" class="button" name="btn_login">
+
+         <p>¿No tienes una cuenta? <a class="link" href="registrarvista.html">Registrate </a></p>
+     </div>
+    </form>
+    Franco Joseph Ortega Gutierrez 18301008 8vo B CETI Rio Santiago
+
+</body>
+<script type="module">
+	// importamo las funciones que vamos a necesitar
+	import { initializeApp } from "https://www.gstatic.com/firebasejs/9.4.0/firebase-app.js";
+	import { getDatabase, set, ref, update } from "https://www.gstatic.com/firebasejs/9.4.0/firebase-database.js";
+	import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.4.0/firebase-auth.js";
+	
+	// TODO: Add SDKs for Firebase products that you want to use
+	// https://firebase.google.com/docs/web/setup#available-libraries
+  
+	// Your web app's Firebase configuration
+	const firebaseConfig = {
+	  apiKey: "AIzaSyAXapsdZ_QQ4sLtF48Yv5ovGz87eUwb1RM",
+	  authDomain: "tayforlive.firebaseapp.com",
+	  databaseURL: "https://tayforlive-default-rtdb.firebaseio.com",
+	  projectId: "tayforlive",
+	  storageBucket: "tayforlive.appspot.com",
+	  messagingSenderId: "163156985446",
+	  appId: "1:163156985446:web:3ada60c6727b7c5ca68fa7"
+	};
+  
+	// Initialize Firebase
+	const app = initializeApp(firebaseConfig);
+	const database = getDatabase(app);
+	const auth = getAuth();
+
+
+
+login.addEventListener('click',(e)=>{
+	var email = document.getElementById('email').value;
+	var password = document.getElementById('password').value;
+
+signInWithEmailAndPassword(auth, email, password)
+.then((userCredential)=> {
+const user = userCredential.user;
+const dt= new Date();
+update(ref(database, 'users/'+user.uid),{
+		last_login: dt
+	})
+	alert('!Se inició sesión con exito!');
+	/*window.location.href = "Cuenta.html"*/
+})
+.catch((error)=>{
+	const errorCode = error.code;
+	const errorMessage = error.message;
+
+	alert(errorCode);
+});
+});
+
+
+const user = auth.currentUser;
+onAuthStateChanged(auth, (user)=> {
+	if(user){
+		const uid = user.uid
+		window.location.href = "INDEX.html";
+	} else {
+
+	}
+});
+
+
+</script>
+</html>

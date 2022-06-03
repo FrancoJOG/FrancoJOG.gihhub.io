@@ -1,0 +1,454 @@
+*{
+    margin:0px;
+    padding:0xp;
+}
+div#general{
+    font-family: 'Lucida Sans' ;
+    font-size: 16px;
+    margin: auto;
+    margin-top: 90px;
+    margin-bottom: 50px;
+    padding: 100px;
+    padding-top: 0px;
+    width: 990px;
+    height: 1370px;
+    background-color: rgba(255, 255, 255, 0.589);
+    text-align: center;
+    align-content: center;
+    border-radius: 30px;
+    justify-content: space-between;
+    box-shadow: rgba(0, 0, 0, 0.26) 0px 10px 15px;
+    overflow: hidden;
+
+   
+}
+#btnLogout{
+  background-color: #b9343400;
+  display: block;
+    padding: 0.5rem 1rem;
+    transition: all 0.2s linear;
+    border-radius: 5px;
+  color: white;
+  border-color: #ffb04200;
+}
+
+#btnLogout:hover{
+  background-color: #ffb142;
+  display: block;
+    padding: 0.5rem 1rem;
+    transition: all 0.2s linear;
+    border-radius: 5px;
+  border-color: #db800000;
+}
+
+
+
+
+    .cuadro{
+    margin: auto;
+    margin-top: 40px;
+    height: 330px;  
+    background-color: rgba(98, 255, 203, 0.644);
+    text-align: center;
+    align-content: center;
+    border-radius: 30px;
+    box-shadow: rgba(0, 0, 0, 0.26) 0px 10px 15px;
+    overflow: hidden;
+    transition: all 500ms ease;
+    position: relative;
+    transform: translateY(-20%);
+}
+
+.cuadro:hover{
+  background-color: rgba(104, 255, 205, 0.055);
+  box-shadow: rgba(0, 0, 0, 0.20) 0px 15px 20px;
+  transition: all 500ms ease;
+  position: relative;
+  transform: translateY(-30%);
+}
+
+.cuadro header{
+    padding: 10px;
+    background: #0B6384;
+    color: white;
+}
+
+#btn-guppy:checked ~ .modal .cuadro .contenido{
+    transform: translateY(0%);
+  }
+
+img#ojo{
+    position: fixed; 
+    margin-top: 335px; 
+    margin-left: 80px;
+    display: none;
+}
+
+
+
+div#footer{
+    background-color: rgba(98, 255, 203, 0.473);
+    margin: 199px;
+    margin-top: 50px;
+    margin-bottom: 10px;
+    color: rgb(25, 0, 255);
+    clear: both;
+    text-align: center;
+    padding: 30px;
+    border-radius: 30px;
+    box-shadow: rgba(0, 0, 0, 0.26) 0px 10px 15px;
+    box-sizing: border-box;
+    transition: 0.5s;
+}
+div#footer:hover{
+  background-color: rgba(140, 255, 217, 0.349);
+  margin: 199px;
+  margin-top: 50px;
+  margin-bottom: 10px;
+  color: rgb(25, 0, 255);
+  clear: both;
+  text-align: center;
+  padding: 30px;
+  border-radius: 30px;
+  box-shadow: rgba(0, 0, 0, 0.20) 0px 15px 25px;
+  box-sizing: border-box;
+  transform: translateY(-20px);
+}
+
+#cerrar{
+    position: absolute;
+    right: 30px;
+    top: 12px;
+}
+
+body{
+    background-color: lightgrey;
+    font-family: sans-serif;
+   }
+
+
+   .modal {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.5);
+    transition: all 500ms ease;
+    opacity: 0;
+    visibility: hidden;
+}
+
+   .container{
+    margin: auto;
+    background-color: white;
+    width: 50em; 
+    margin-top: 11em;
+    padding: 1em;
+    height: 29em;  
+    background:linear-gradient( 1deg, rgb(45, 145, 228),rgb(5, 255, 255), rgb(7, 184, 116));
+    text-align: center;
+    align-content: center;
+    border-radius: 30px;
+    box-shadow: rgba(0, 0, 0, 0.26) 0px 10,px 15px;
+    display: none;
+    position: relative;
+    transition: opacity 3s;
+    transition: all 500ms ease;
+
+
+   }
+
+   .h1{
+     margin-top: 20px;
+   }
+
+
+   ul, li {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+   }
+   ul.slider{
+    position: relative;
+    width: 800px;
+    height: 300px;
+   }
+   ul.slider li {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    opacity: 0;
+    width: inherit;
+    height: inherit;
+    transition: opacity .5s;
+    background:#fff;
+   }
+   ul.slider li img{
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+   }
+   
+   ul.slider li:target {
+    opacity: 1; /*Mostramos el <li> del enlace que pulsemos*/
+   }
+   .menu{
+    text-align: center;
+    margin: 89px;
+   }
+   .menu li{
+    display: inline-block;
+    text-align: center;
+   }
+   .menu li a{
+    display: inline-block;
+    color: white;
+    text-decoration: none;
+    background-color: grey;
+    padding: 10px;
+    width: 20px;
+    height: 20px;
+    font-size: 20px;
+    border-radius: 100%;
+   }
+
+   .nosotros{
+    box-sizing: border-box;
+    margin: 50px;
+    text-align: left;
+   }
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  .containerhead {
+    width: 85%;
+    
+    margin: 0 auto;
+    position: relative;
+  }
+  
+  .header {
+    background: #333;
+    color: white;
+    padding: 2rem 0;
+    box-shadow: rgba(0, 0, 0, 0.40) 0px 4px 5px;
+
+  
+    /* hacer el menu fijo */
+    position: fixed;
+    left: 0;
+    top: 0;
+    /* ocuapamos todo el ancho */
+    right: 0;
+  }
+  
+  .header a {
+    color: white;
+    text-decoration: none;
+  }
+  
+  .logo-nav-container {
+    display: flex;
+    justify-content: space-between;
+    /* lo alineamos al centro */
+    align-items: center;
+    
+    flex-wrap: wrap;
+  }
+  
+  /* logo */
+  .logo {
+    letter-spacing: 15px;
+    font-size: 1.3em;
+  }
+  
+  .menu-icon {
+    display: none;
+  }
+  
+  /* todos los "ul" que esten dentro de "navigation" */
+  .navigation ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  
+  .navigation ul li {
+    /* uno al lado del otro */
+    display: inline-block;
+  }
+  
+  /* los enlaces dentro del menu */
+  .navigation ul li a {
+    display: block;
+    padding: 0.5rem 1rem;
+    transition: all 0.2s linear;
+    border-radius: 5px;
+  }
+  
+  .navigation ul li a:hover {
+    background: #ffb142;
+  }
+  
+  
+
+  .menu-link{
+      color: black;
+  }
+  
+  .fb{
+      color: blue;
+  }
+ 
+
+  .TARJETA_SHOP{
+  
+  height: 310px;
+  width: 243px;
+  position:relative;
+  float: left;
+  margin: 1px;
+  transition: 0.5s;
+  border-radius: 30px;
+  }
+
+  .TARJETA_SHOP img{
+    height: 200px;
+    width: 200px;
+    margin: 10px;
+    border-color: violet;
+    box-shadow: rgba(0, 0, 0, 0.26) 15px 10 px 15px;
+
+  }
+
+  .TARJETA_SHOP button{
+    border-radius: 8px;
+    font-size: 16px;
+    text-align: center;
+    background-color: rgba(98, 255, 203, 0.473);;
+    color: black;
+    border: 1px solid rgba(69, 224, 208, 0.39);
+    transition: 0.4s;
+  }
+
+  .TARJETA_SHOP button:hover{
+     background-color: rgba(64, 224, 208, 0.842);
+     color: white;
+  }
+
+
+  .TARJETA_SHOP:hover{
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    background:  white;
+    height: 330px;
+    width: 253px;
+    
+  }
+
+  .CONTENIDO{
+    margin-top: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
+  
+  .carrito{
+    margin-top: 30px;
+    background:  white;
+    height: 300px;
+    width: 100%;
+    border-radius: 30px;
+    overflow:auto;
+  }
+
+  .xD::-webkit-scrollbar{
+    width: 10px;
+    
+  }
+  
+  .xD::-webkit-scrollbar-thumb{
+    width: 10px;
+    border-radius: 30px;
+    background: #ffb142;
+  }
+
+  .carrito::-webkit-scrollbar{
+    width: 10px;
+    border-radius: 30px;
+  }
+  
+  .carrito::-webkit-scrollbar-thumb{
+    width: 10px;
+    border-radius: 30px;
+    background: #218c74;
+  }
+
+   /* REPONSIVE */
+  /* todas las caracteristicas que se mostraran a continuancion seran cuando tenga un ancho maximo de 767px */
+  
+  @media only screen and (max-width: 767px) {
+    .menu-icon{
+        display: block;
+        cursor: pointer;
+    }
+
+    .navigation{
+        width: 100%;
+    }
+    .navigation ul{
+        display: none;
+    }
+    .navigation ul.show{
+        display: block;
+    }
+      
+    .navigation ul li {
+        display: block;
+      }
+      
+      /* los enlaces dentro del menu */
+      .navigation ul li a {
+        display: block;
+        padding: 0.5rem 1rem;
+        transition: all 0.2s linear;
+        border-radius: 5px;
+      }
+  
+      .navigation ul li a:hover {
+        background: #ffb142;
+      }
+
+      div#general{
+        padding: 50px;
+        width: 567px;
+     
+    }
+    #p{
+font-size: small;
+    }
+    .cuadro{
+      margin: auto;
+      margin-top: 20px;
+      height: 230px;  
+      width: 400px;
+  }
+  .cuadro img{
+    width: 170px;
+}
+}

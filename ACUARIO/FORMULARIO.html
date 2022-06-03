@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Acuario.css" type="text/css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <title>FORMULARIO</title>
+</head>
+<body class="xD" style="background:linear-gradient( 1deg, rgb(7, 184, 116),rgb(5, 255, 255), rgb(45, 145, 228));">
+   
+    <div id="general" style="height: auto;" >
+        <br><br><br>
+        <h1 style="color:#218c74;">ACUARIO MIZU - FORMULARIO DE CONTACTO</h1>
+        <br>
+
+
+        <div style="text-align: start;">
+        
+    
+            <br><h2>CUÉNTANOS:</h2><br><br>
+        <form action="" method="get">
+        <p><label for="Nombre" >Nombre(s) y Apellidos:</label> 
+            <div class="row">
+                <div class="col">
+                  <input type="text" class="form-control" placeholder="Nombre" aria-label="Nombre">
+                </div>
+                <div class="col">
+                  <input type="text" class="form-control" placeholder="Apellidos" aria-label="Apellidos">
+                </div>
+              </div>
+        </p><br>
+    
+    
+        <p>Género:  
+
+            <input type="radio" class="btn-check" name="options-outlined" id="success-outlined" autocomplete="off" checked>
+            <label class="btn btn-outline-secondary" for="success-outlined">Masculino ♂️👨</label>
+            
+            <input type="radio" class="btn-check" name="options-outlined" id="danger-outlined" autocomplete="off" >
+            <label class="btn btn-outline-secondary" for="danger-outlined">Femenino  ♀️👩</label>
+
+            <input type="radio" class="btn-check" name="options-outlined" id="danger-outlined" autocomplete="off" checked>
+            <label class="btn btn-outline-secondary" for="danger-outlined">otro 🏳️‍🌈</label>
+        
+        </p><br>
+    
+
+
+        <p><label for="Correo">Correo Electrónico:</label> 
+            <div class="col-sm-10">
+                <input type="email" class="form-control" id="inputEmail3">
+              
+        </p><br>
+
+
+    
+
+
+
+        <p>
+        <label for="Poblacion">Ciudad:</label>
+        <select class="form-select" aria-label="Default select example" name ="Poblacion" id="Poblacion">
+        <option>Guadalajara</option>
+        <option>Zapopan</option>
+        <option>Tlajomulco</option>
+        <option>Tlaquepaque</option>
+        <option>EL Salto</option>
+        <option>Tonala</option>
+        </select>
+        </p><br>
+    
+        <p><label for="Descripcion">Descripción</label>
+        <textarea  class="form-control" name="Descripcion" id="Descripcion" rows="3" cols="70"></textarea>
+        </p><br><br><br>
+
+
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+            <label class="form-check-label" for="flexCheckDefault">
+                Deseo recibir información sobre novedades y ofertas
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+            <label class="form-check-label" for="flexCheckChecked">
+                Declaro haber leído y aceptado los términos, condiciones y la normativa de protección de datos
+            </label>
+          </div>
+    
+        
+        <div style="text-align: center;"><p>
+        <input style="background: rgb(7, 184, 116);" type="submit" value="ENVIAR"/>
+        </p>
+        </div>
+        </form>
+    
+        </div>
+
+
+
+        <a href="UBICACION.html"><div id="footer">
+            <p>¡CONÓCENOS!</p>
+            <p> Correo: Contacto@mizu.com.mx <br> Tel: 3314509919  <br> Gonzáles Gallo #777</p>                              
+            </div></a>
+    </div>
+
+    <header class="header">
+        <div class="containerhead logo-nav-container">
+            <a href="INDEX.html" class="logo"><img src="pesojo.png" width="140px"alt="">Acuario Mizu</a>
+            <span class="menu-icon">Ver menú</span>
+       
+            <nav class="navigation">
+                <ul class="show">
+                    <li><a href="INDEX.html">Inicio</a></li>
+                    <li><a href="GALERIA.html">Galería</a></li>
+                    <li><a href="SHOP.html">Shop</a></li>
+                    <li><a href="FORMULARIO.html">Contacto</a></li>
+                    <li><a href="UBICACION.html">Acerca</a></li>
+                    <li><button  id="btnLogout" >Cerrar sesión</button></li>
+                </ul>
+            </nav>      
+        </div>
+    </header>
+    
+
+    <!-- <script src="../js/jquery-3.5.0.min.js"></script> -->
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="js/javaS1.js"></script>
+
+</body>
+Franco Joseph Ortega Gutierrez 18301008 8vo B CETI Rio Santiago
+<script type="module">
+	// Import the functions you need from the SDKs you need
+    //inizializar
+	import { initializeApp } from "https://www.gstatic.com/firebasejs/9.4.0/firebase-app.js";
+    //CRUD
+	import { getDatabase, set, ref, update, remove, child, get } from "https://www.gstatic.com/firebasejs/9.4.0/firebase-database.js";
+    //autetntication
+	import { getAuth, signOut, sendPasswordResetEmail, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, deleteUser } from "https://www.gstatic.com/firebasejs/9.4.0/firebase-auth.js";
+	
+	// TODO: Add SDKs for Firebase products that you want to use
+	// https://firebase.google.com/docs/web/setup#available-libraries
+  
+	// Your web app's Firebase configuration
+	const firebaseConfig = {
+	  apiKey: "AIzaSyAXapsdZ_QQ4sLtF48Yv5ovGz87eUwb1RM",
+	  authDomain: "tayforlive.firebaseapp.com",
+	  databaseURL: "https://tayforlive-default-rtdb.firebaseio.com",
+	  projectId: "tayforlive",
+	  storageBucket: "tayforlive.appspot.com",
+	  messagingSenderId: "163156985446",
+	  appId: "1:163156985446:web:3ada60c6727b7c5ca68fa7"
+	};
+  
+	// Initialize Firebase
+	const app = initializeApp(firebaseConfig);
+	const database = getDatabase(app);
+	const auth = getAuth();
+    //var storage = firebase.storage();
+
+//------------------------inicializar Titulos-------------------
+
+//-------------------Variables---------------------
+var email;
+var username;
+var uid;
+//ArrayList<Areas>list;
+
+//--------------------------Inicializo botones---------------------
+var btnLogout = document.getElementById("btnLogout");
+
+//-----------------------Asignar eventos con botones--------------
+
+btnLogout.addEventListener('click', Logout);
+
+
+
+//-------------------------Validar inicio de sesión------------
+const user = auth.currentUser;
+onAuthStateChanged(auth, (user)=> {
+var username = document.getElementById("username");
+var email = document.getElementById("email");
+
+	if(user){
+		uid = user.uid;
+        const dbref = ref(database);
+        
+
+//-----------------------sí el usuario no esta registrado-------------
+	} else {
+        window.location.href = "loginvista.html"
+	}
+});
+
+
+//------------------------Cerrar sesión------------------
+function Logout(){          
+	signOut(auth).then(()=> {
+		alert('Sesión cerrada');
+        
+	}).catch((error)=>{
+	const errorCode = error.code;
+	const errorMessage = error.message;
+
+	alert(errorMessage);
+});
+}
+
+//------------------------Historial-----------------
+
+//-------------------------Delet Acount-------
+
+//----------------Subir Imagen------------
+
+</script>
+</html>
