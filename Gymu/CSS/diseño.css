@@ -57,16 +57,21 @@ li a.active, li a:hover{
     display: none;
 }
 
+nav ul li .descarga{
+    color: #4cc75f;
+    border: 1px solid #4cc75f;
+}
+
 #check{
     display: none;
 }
 .Contenido{
 background-color: #1B271D;
 margin-right: 0;
-
+padding-bottom: 100%;
 }
 .Contenido p{
-    margin: 50px;
+    padding: 50px;
     text-align: justify;
 }
 .Contenido h2{
@@ -86,8 +91,8 @@ margin-right: 0;
 h1{
     text-align: center;
     color: white;
-    margin-top: 20px;
-    margin-bottom: -40px;
+    padding-top: 20px;
+
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 

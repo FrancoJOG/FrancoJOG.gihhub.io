@@ -23,9 +23,11 @@ nav{
     height: 45px;
 }
 
+
+
 nav ul{
     float: right;
-    margin-right: 20px;
+    
 }
 
 nav ul li{
@@ -34,13 +36,19 @@ nav ul li{
     margin:0 5px;
 }
 
+nav ul li .descarga{
+    color: #4cc75f;
+    border: 1px solid #4cc75f;
+}
+
+
 nav ul li a{
     color: #fff;
     font-size: 18px;
     padding: 7px 13px;
     border-radius: 3px;
     text-transform: uppercase;
-
+   
 }
 li a.active, li a:hover{
     background: #4cc75f;
@@ -52,7 +60,7 @@ li a.active, li a:hover{
     color: #fff;
     float:  right;
     line-height: 80px;
-    margin-right: 40px;
+    
     cursor: pointer;
     display: none;
 }
@@ -66,6 +74,8 @@ li a.active, li a:hover{
 .Contenido{
 background-color: #1B271D;
 margin-right: 0;
+padding: 50px;
+padding-bottom: 100%;
 
 }
 .Contenido p{
@@ -73,6 +83,7 @@ margin-right: 0;
     margin: 50px;
     text-align: justify;
 }
+
 .Contenido h2{
     color: white;
     margin: 50px;
@@ -93,8 +104,7 @@ margin-right: 0;
 }
 
 h1{
-    margin-top: 20px;
-    margin-bottom: -40px;
+
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 

@@ -8,6 +8,11 @@
 
   }
 
+  nav ul li .descarga{
+    color: #4cc75f;
+    border: 1px solid #4cc75f;
+}
+
 nav{
     background: #233025;
     height: 80px;
@@ -64,17 +69,19 @@ li a.active, li a:hover{
 .Contenido{
 background-color: #1B271D;
 margin-right: 0;
-
+padding-bottom: 10%;
 }
 .Contenido p{
     margin: 50px;
     text-align: justify;
+    
 }
 .Contenido h2{
     text-align: center;
     color: white;
     margin: 50px;
     margin-bottom: -40px;
+    
    
 }
 .Contenido::-webkit-scrollbar{
@@ -94,8 +101,7 @@ margin-right: 0;
 h1{
     text-align: center;
     color: white;
-    margin-top: 20px;
-    margin-bottom: -40px;
+
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
@@ -157,6 +163,8 @@ p{
         display: flex;
         align-items: center;
         justify-content: center;
+        padding: 0;
+        margin: 0;
     }
 
     
