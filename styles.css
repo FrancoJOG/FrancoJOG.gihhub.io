@@ -1,28 +1,35 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Índice de Páginas</title>
-    <!-- Agregamos el enlace al archivo CSS personalizado y Bootstrap -->
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-</head>
-<body>
+body {
+    background-color: #f0e6f4;
+}
 
-    <div class="container">
-        <h1>Seleccione una Página</h1>
+h1 {
+    text-align: center;
+    margin-top: 50px;
+    color: #5e3c92;
+}
 
-        <ul>
-            <li><a href="pagina1.html">Página 1</a></li>
-            <li><a href="pagina2.html">Página 2</a></li>
-            <!-- Agrega más elementos li y a según sea necesario -->
-        </ul>
-    </div>
+ul {
+    list-style-type: none;
+    padding: 0;
+    text-align: center;
+}
 
-    <!-- Agregamos el enlace al archivo JavaScript de Bootstrap (opcional) -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-</body>
-</html>
+li {
+    display: inline-block;
+    margin: 10px;
+}
+
+a {
+    text-decoration: none;
+    padding: 10px;
+    border: 1px solid #5e3c92;
+    border-radius: 5px;
+    color: #5e3c92;
+    background-color: #fff;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+a:hover {
+    background-color: #5e3c92;
+    color: #fff;
+}
