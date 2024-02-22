@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/index.css">
+	<link rel="stylesheet" href="css/Cuenta.css">
+	<link rel="stylesheet" href="css/Usuarios.css">
+
+    <title>Usuarios</title>
+</head>
+<body>
+    <header id="main-header">
+		<div class="containerhead logo-nav-container">
+		<a id="logo-header" href="index.html"><img src="Imagenes/logo.png" alt="logo" width="200px" ></a>
+
+		<nav class="navigation">
+			<ul>
+            <li><a href="https://francojog.github.io/index.html">Inicio</a></li>
+            <li><a href="https://francojog.github.io/Carrito-Compras-JavaScript-0.0.0/index.html">Producto</a></li>
+            <li><a href="https://francojog.github.io/Nosotros.html">Nosotros</a></li>
+            <li><a href="https://francojog.github.io/Contacto.html">Contacto</a></li>
+            <li><a href="https://francojog.github.io/Login.html">Login</a></li>
+			</ul>
+		</nav>
+    </div>
+	</header>
+
+    <h1>Usuarios</h1>
+<hr>
+
+<div style="background-color: antiquewhite; margin: 50px;">
+<p>En esta pagina podras ver, administrar, y eliminar a los usuarios que esten registrados.</p>
+<h2 style="">X</h2>
+</div>
+
+
+<div class="contenedor">
+
+<ul id="list">
+
+</ul>
+</div>
+
+
+</body>
+<script type="module">
+///-----------------------------Importaciones--------------------------------------------------
+	//inizializar
+	import { initializeApp } from "https://www.gstatic.com/firebasejs/9.4.0/firebase-app.js";
+    //CRUD
+	import { getDatabase, set, ref, update, remove, child, get } from "https://www.gstatic.com/firebasejs/9.4.0/firebase-database.js";
+    //autetntication
+	import { getAuth, signOut, sendPasswordResetEmail, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, deleteUser } from "https://www.gstatic.com/firebasejs/9.4.0/firebase-auth.js";
+	
+//-------------------------Credenciales y conexion----------------------
+	const firebaseConfig = {
+	  apiKey: "AIzaSyAXapsdZ_QQ4sLtF48Yv5ovGz87eUwb1RM",
+	  authDomain: "tayforlive.firebaseapp.com",
+	  databaseURL: "https://tayforlive-default-rtdb.firebaseio.com",
+	  projectId: "tayforlive",
+	  storageBucket: "tayforlive.appspot.com",
+	  messagingSenderId: "163156985446",
+	  appId: "1:163156985446:web:3ada60c6727b7c5ca68fa7"
+	};
+  
+//---------------------Inicializa Firebase---------------------------------------
+	const app = initializeApp(firebaseConfig);
+	const database = getDatabase(app);
+	const auth = getAuth();
+
+
+//-------------------------Inicializa Objetos-------------------------------
+    var Subtitulos = document.querySelectorAll("h2")
+    var Formularios = document.querySelectorAll("form")
+	var stdNo=0;
+ 
+//-----------------------Verficiación inicio de sesión------------------
+const user = auth.currentUser;
+onAuthStateChanged(auth, (user)=> {
+
+//---------------------------Sí se inció sesión...------------------------
+	if(user){
+		
+		const uid = user.uid
+        //alert(uid);
+        const dbref = ref(database);
+
+		get(child(dbref,"users")).then((snapshot)=>{
+
+const dbref = ref(database);
+		snapshot.forEach(
+			function(ChildSnapshot){
+				let username = ChildSnapshot.val().username;
+				let email = ChildSnapshot.val().email;
+				let type = ChildSnapshot.val().type;
+				//let username = ChildSnapshot.val().username;
+				addItemsToList(username,email,type);
+			}
+		);
+	})
+        .catch((error)=>{
+            const errorCode = error.code;
+            const errorMessage = error.message;
+	        alert(errorMessage + "XD");
+        });
+
+
+//---------------------------Sí no se inicio sesión...-------------------
+	} else {
+        window.location.href = "index.html"
+        alert('No haz iniciado sesión');
+	}
+});
+
+
+
+
+
+function addItemsToList(username,email,type){
+	var ul= document.getElementById('list');
+	var header=document.createElement('h2');
+	var _username=document.createElement('li');
+	var _email=document.createElement('li');
+	var _type=document.createElement('li');
+	var _button=document.createElement('button');
+	var _div = document.createElement('footer');
+	//var _uid=document.getElementById('li');
+
+	var userType;
+	switch(type){
+		case 0: 
+		userType="Normal";
+		break;
+		case 1: 
+		userType="administrador";
+		break;
+		default:
+		userType="Normal";
+		break;
+	}
+	
+	
+	header.innerHTML='Usuario: '+(++stdNo);
+	_username.innerHTML='Nombre: '+username;
+	_email.innerHTML='Correo: '+email;
+	_type.innerHTML='Tipo de usurio: '+userType;//switch
+	_button.innerHTML='Eliminar usuario '+stdNo;
+	
+	//_uid.innerHTML='ID: '+name;
+
+	  ul.appendChild(_div);
+	_div.appendChild(header);
+	_div.appendChild(_username);
+	_div.appendChild(_email);
+	_div.appendChild(_type);
+	_div.appendChild(_button);
+	
+	
+
+	//ul.appendChild(_uid);
+}
+
+
+
+</script>
+</html>
