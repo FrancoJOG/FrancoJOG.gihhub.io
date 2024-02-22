@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Presentation Page</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Establecer un tamaño específico para las imágenes */
+        .card-img-top {
+            width: 100%; /* Ajusta según sea necesario */
+            height: 200px; /* Ajusta según sea necesario */
+            object-fit: cover; /* Controla cómo se ajusta la imagen */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>My Presentation Page</h1>
+
+        <div class="presentation-section">
+            <h2>About me</h2>
+            <p>Hi! I am Franco Joseph Ortega Gutierrez, a passionate developer</p>
+
+            <p>You can find more information about me here --> <a href="curriculum_es.pdf" target="_blank">Currículum</a> or <a href="curriculum_en.pdf" target="_blank">Resume</a>.</p>
+        </div>
+
+        <h2>Select a Page</h2>
+        <div class="d-flex flex-row">
+            <div class="card mr-3"><a href="http://procaypas.com">
+                <img src="src/procaypas.png" class="card-img-top img-fluid" alt="Page 1 Image" data-toggle="tooltip" data-placement="bottom" title="Click to enlarge">
+                <div class="card-body">
+                    <h5 class="card-title">Procaypas</h5>
+                    <p class="card-text">Developed by me whit the design of my designer in 2024</p>
+                </div></a>
+            </div>
+
+            <div class="card mr-3"><a href="TayForLive/index.html">
+                <img src="src/Tay.png" class="card-img-top img-fluid" alt="Page 2 Image" data-toggle="tooltip" data-placement="bottom" title="Click to enlarge">
+                <div class="card-body">
+                    <h5 class="card-title">TayForLive</h5>
+                    <p class="card-text">Page developed as a project for a subject in 2021</p>
+                </div></a>
+            </div>
+
+            <div class="card mr-3"><a href="Gymu/index.html">
+                <img src="src/u.png" class="card-img-top img-fluid" alt="Page 2 Image" data-toggle="tooltip" data-placement="bottom" title="Click to enlarge">
+                <div class="card-body">
+                    <h5 class="card-title">Gymu</h5>
+                    <p class="card-text">Page only to download my mobile application made with java</p>
+                </div></a>
+            </div>
+        </div>
+        <br>
+        <div class="d-flex flex-row">
+            <div class="card mr-3"><a href="TayForLive/index.html">
+                <img src="src/Acuario.png" class="card-img-top img-fluid" alt="Page 1 Image" data-toggle="tooltip" data-placement="bottom" title="Click to enlarge">
+                <div class="card-body">
+                    <h5 class="card-title">Page 1</h5>
+                    <p class="card-text">Description for Page 1.</p>
+                </div></a>
+            </div>
+        </div>
+    </div>
+    <br>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+        $(document).ready(function(){
+            $('[data-toggle="tooltip"]').tooltip();
+        });
+    </script>
+</body>
+</html>

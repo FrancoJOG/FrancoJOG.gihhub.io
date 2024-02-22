@@ -1,0 +1,38 @@
+body {
+    background-color: #ffffff;
+    line-height: 2em !important;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 50px;
+    color: #5e3c92;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    text-align: center;
+}
+
+li {
+    display: inline-block;
+    margin: 10px;
+}
+
+a {
+    text-decoration: none;
+    padding: 10px;
+    border: 1px solid #5e3c92;
+    border-radius: 5px;
+    color: #5e3c92;
+    background-color: #fff;
+    transition: background-color 0.3s, color 0.3s;
+    text-decoration: none; 
+}
+
+a:hover {
+    background-color: #815bba;
+    color: #fff;
+    text-decoration: none; 
+}
