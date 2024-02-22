@@ -4,13 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Índice de Páginas</title>
+    <!-- Agregamos el enlace al archivo CSS de Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
         body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
+            background-color: #f8f9fa;
         }
         h1 {
             text-align: center;
+            margin-top: 50px;
+            color: #343a40;
         }
         ul {
             list-style-type: none;
@@ -24,24 +27,33 @@
         a {
             text-decoration: none;
             padding: 10px;
-            border: 1px solid #ccc;
+            border: 1px solid #343a40;
             border-radius: 5px;
-            color: #333;
+            color: #343a40;
+            background-color: #fff;
+            transition: background-color 0.3s;
         }
         a:hover {
-            background-color: #eee;
+            background-color: #343a40;
+            color: #fff;
         }
     </style>
 </head>
 <body>
 
-    <h1>Seleccione una Página</h1>
+    <div class="container">
+        <h1>Seleccione una Página</h1>
 
-    <ul>
-        <li><a href="pagina1.html">Página 1</a></li>
-        <li><a href="pagina2.html">Página 2</a></li>
-        <!-- Agrega más elementos li y a según sea necesario -->
-    </ul>
+        <ul>
+            <li><a href="pagina1.html">Página 1</a></li>
+            <li><a href="pagina2.html">Página 2</a></li>
+            <!-- Agrega más elementos li y a según sea necesario -->
+        </ul>
+    </div>
 
+    <!-- Agregamos el enlace al archivo JavaScript de Bootstrap (opcional) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
